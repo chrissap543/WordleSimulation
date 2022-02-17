@@ -10,6 +10,8 @@ void readFile() {
     getline(data, line);
     // split at the comma
     string word = line.substr(0, line.find(','));
+    if (word.size() != 5)
+      continue;
     long long frequency = stoll(line.substr(line.find(',') + 1));
     g_wordFrequencies.insert(pair<string, long long>(word, frequency));
   }
